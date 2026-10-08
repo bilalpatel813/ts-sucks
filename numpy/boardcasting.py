@@ -9,3 +9,4 @@ print("Bonus Marks: ",bonus_marks)
 print("shape of bonus_marks array: ",np.shape(bonus_marks))
 print("Total Marks: ",total_marks)
 
+#BoardCasting : can merge elements of two different arrays of same index without loops
