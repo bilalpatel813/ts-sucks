@@ -17,3 +17,7 @@ print("m :",m,"\nn array:",n)
 n[0] = 9999
 print("after copy m array: ",m,"\nn array: ",n)
 
+# Check if the memory is shared btw two arrays
+
+print("memory shared btw(a,b):",np.shares_memory(a,b))
+print("memory shared btw(m,n):",np.shares_memory(m,n))

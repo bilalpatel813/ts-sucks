@@ -23,11 +23,32 @@ print("element-wise multiplication: ",m*n)
 # - Solving equation:
 
 #1 - 2x + y = 5
-#2 - x + 3y = 2 -> 2x + 6y = 4 --3
+#2 - x + 3y = 2 -> 2x + 6y = 4 -- (3)
 A = np.array([
     [2, 1],
     [1, 3]
 ])
 B = np.array([5,2])
 print("linear algebaric solution[x,y] of equation  \n2x + y = 5\nx + 3y = 2\n",np.linalg.solve(A,B))
+
+# - find Transpose:
+S = np.array([[1,2,3],
+             [4,5,6]])
+print("Before Transpose: ",S)
+print("Transpose of S:",S.T)
+
+# - Indentity Matrix:
+print("Identity Matrix: ",np.eye(3))
+
+# - Determinant:
+
+print("Determinant of A: ",np.linalg.det(A))
+
+# - eigenVectors & eigenValues:
+
+E = np.array([[2,0],
+             [0,3]])
+eigenvalues,eigenvectors = np.linalg.eig(E)
+print("EigenValues:\n",eigenvalues)
+print("EigenVectors: \n",eigenvectors)
 

@@ -17,3 +17,23 @@ print("average of each subjects: ",np.mean(students,axis=0))
 print("Highest marks: ",np.max(students))
 print("Lowest marks: ",np.min(students))
 
+
+# Random normal distribution
+scores = rng.normal(
+    loc=70,
+    scale=10,
+    size=1000
+)
+print("Scores: ",scores)
+print(scores.mean())
+print(scores.std())
+
+#Random choice :
+posts = np.array(["Coder","tech","doctor","mechanic","engineer"])
+print("Random choice: ",rng.choice(posts,size=5))
+
+# Random shuffle array:
+num = np.array([1,2,3,4,5])
+print("array: ",num)
+rng.shuffle(num)
+print("shuffled array: ",num)
