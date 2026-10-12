@@ -1,0 +1,20 @@
+[
+  {
+    "platform":"Instagram",
+    "followers":5000,
+    "likes":720,
+    "views":15000
+  },
+  {
+    "platform":"YouTube",
+    "followers":3200,
+    "likes":410,
+    "views":9000
+  },
+  {
+    "platform":"Instagram",
+    "followers":2500,
+    "likes":340,
+    "views":7000
+  }
+]
