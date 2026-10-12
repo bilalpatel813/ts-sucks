@@ -1,0 +1,16 @@
+[
+  {
+    "creator": "Rahul",
+    "platform": "Instagram",
+    "followers": 1200,
+    "likes": 150,
+    "views": 3000
+  },
+  {
+    "creator": "Aisha",
+    "platform": "Instagram",
+    "followers": 2500,
+    "likes": 340,
+    "views": 7000
+  }
+]
