@@ -44,3 +44,10 @@ print(summary)
 
 top_creator  = df.sort_values("likes",ascending=False)
 print(top_creator[["creator", "views"]].head(3))
+
+idx = df.groupby("platform")["views"].idxmax()
+top_by_platform = df.loc[
+    idx,["creator","platform","views"]
+]
+
+print(top_by_platform)
