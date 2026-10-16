@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 
 creators = pd.DataFrame({
@@ -13,8 +14,8 @@ posts = pd.DataFrame({
     "views": [3000, 7000, 4500, 2000],
 #    "platform":["Instagram", "Instagram", "YouTube","Youtube"]
 })
-creators.to_csv("ts-sucks/pandas/creator.csv")
-posts.to_csv("ts-sucks/pandas/posts.csv")
+creators.to_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creator.csv"))
+posts.to_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "posts.csv"))
 
 print(creators)
 print(posts)

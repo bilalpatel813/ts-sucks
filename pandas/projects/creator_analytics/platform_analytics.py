@@ -1,7 +1,8 @@
+from pathlib import Path
 import pandas as pd
 
 # - load data from csv
-df = pd.read_csv("ts-sucks/pandas/creators.csv")
+df = pd.read_csv((Path(__file__).resolve().parents[2] / "data" / "raw" / "creators.csv"))
 
 # - summarize statictics for every creator
 
@@ -26,6 +27,6 @@ print("Platform Analytics report: \n",report)
 
 # -  save to csv file
 
-report.to_csv("ts-sucks/pandas/platform_analytic.csv")
+report.to_csv((Path(__file__).resolve().parents[2] / "data" / "processed" / "platform_analytics.csv"))
 print("report saved to platform_analytics.csv")
 

@@ -1,8 +1,9 @@
+from pathlib import Path
 import pandas as pd
 
 # - load the csv files
-creator = pd.read_csv("ts-sucks/pandas/creator.csv")
-posts = pd.read_csv("ts-sucks/pandas/posts.csv")
+creator = pd.read_csv((Path(__file__).resolve().parents[2] / "data" / "raw" / "creator.csv"))
+posts = pd.read_csv((Path(__file__).resolve().parents[2] / "data" / "raw" / "posts.csv"))
 
 # combine post with creator 
 combined = pd.merge(posts,creator,on="creator_id",how="left",validate="many_to_one")
@@ -23,6 +24,6 @@ report = report.sort_values(
 )
 
 # save to csv file
-report.to_csv("ts-sucks/pandas/creator_reprot.csv",index=False)
+report.to_csv((Path(__file__).resolve().parents[2] / "data" / "processed" / "creator_report.csv"),index=False)
 print(report)
 print("Saved creator_report.csv")

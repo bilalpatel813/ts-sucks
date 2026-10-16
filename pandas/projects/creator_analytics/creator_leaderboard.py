@@ -1,6 +1,7 @@
+from pathlib import Path
 import pandas as pd
 
-df = pd.read_csv("ts-sucks/pandas/creators.csv")
+df = pd.read_csv((Path(__file__).resolve().parents[2] / "data" / "raw" / "creators.csv"))
 
 #-  Inpsect the data
 print("data shape: ",df.shape)
@@ -24,7 +25,7 @@ print(leaderboard[["creator","followers","likes","views","likes_per_1000_views"]
 
 # - save in files 
 
-leaderboard.to_csv("ts-sucks/pandas/creator_leaderboard.csv",index=False)
+leaderboard.to_csv((Path(__file__).resolve().parents[2] / "data" / "processed" / "creator_leaderboard.csv"),index=False)
 
 print("Saved in creator_leaderboard.csv file!")
 

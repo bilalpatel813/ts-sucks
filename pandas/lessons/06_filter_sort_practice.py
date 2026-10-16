@@ -1,14 +1,15 @@
+from pathlib import Path
 import pandas as pd 
 
-df = pd.read_csv("ts-sucks/pandas/creators.csv")
+df = pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.csv"))
 
 # - display only followers and creator 
-df = pd.read_csv("ts-sucks/pandas/creators.csv",usecols=["creator","followers"])
+df = pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.csv"),usecols=["creator","followers"])
 print("selected by creators ,followers:\n",df)
 # - creator with followers more than 1500
 print("Creators with followers greater than 1500:\n",df[df["followers"]>1500])
 # - Creator with atleast 200 likes
-df = pd.read_csv("ts-sucks/pandas/creators.csv")
+df = pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.csv"))
 print("Creator with atleast 200: \n",df[df["likes"]>200])
 
 # - creator wiht 3000 - 10,000 views
@@ -22,4 +23,4 @@ print("Top 2 creator by highest views:\n",df.nlargest(2,"views"))
 
 # - save creator wiht atleast 2000 followers in csv
 res = df[df["followers"]>2000]
-save_res = res.to_csv("ts-sucks/pandas/top_creator.csv",index=False)
+save_res = res.to_csv((Path(__file__).resolve().parents[1] / "data" / "processed" / "top_creator.csv"),index=False)

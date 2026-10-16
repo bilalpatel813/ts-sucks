@@ -1,15 +1,16 @@
+from pathlib import Path
 import pandas as pd
 
-df = pd.read_csv("ts-sucks/pandas/creators.csv")
+df = pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.csv"))
 print("data from csv file\n",df)
-df =  pd.read_csv("ts-sucks/pandas/creators.csv",nrows=3)
+df =  pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.csv"),nrows=3)
 print("first three rows :\n",df)
-df =  pd.read_csv("ts-sucks/pandas/creators.csv",usecols=["creator","likes"])
+df =  pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.csv"),usecols=["creator","likes"])
 print("gives only selected columns: \n",df)
-df =  pd.read_csv("ts-sucks/pandas/creators.csv",index_col="creator")
+df =  pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.csv"),index_col="creator")
 print("creator as column: \n",df)
 # - fetch via integers position 
-df1 = pd.read_json("ts-sucks/pandas/creators.json")
+df1 = pd.read_json((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.json"))
 print("data from json file: \n",df)
 print(df1[["creator", "likes", "views"]])
 print("gives first row:\n ",df1.iloc[0])
@@ -48,12 +49,12 @@ print("gives 3 user with low followers:\n",df.nsmallest(3,"followers"))
 
 # - save results in new files
 
-saved_csv = res.to_csv("ts-sucks/pandas/results.csv",index=False)
-saved_json = res.to_json("ts-sucks/pandas/results.json",orient ="records",indent=2)
+saved_csv = res.to_csv((Path(__file__).resolve().parents[1] / "data" / "processed" / "results.csv"),index=False)
+saved_json = res.to_json((Path(__file__).resolve().parents[1] / "data" / "processed" / "results.json"),orient ="records",indent=2)
 
-load_saves= pd.read_csv("ts-sucks/pandas/results.csv")
+load_saves= pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "processed" / "results.csv"))
 print("CSV Saved data:\n",load_saves)
-load_saves = pd.read_json("ts-sucks/pandas/results.json")
+load_saves = pd.read_json((Path(__file__).resolve().parents[1] / "data" / "processed" / "results.json"))
 print("Json Saved data:\n",load_saves)
 
 

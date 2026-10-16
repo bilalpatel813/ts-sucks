@@ -1,7 +1,8 @@
+from pathlib import Path
 import pandas as pd
 
  # - load data from csv 
-df = pd.read_csv("ts-sucks/pandas/creators.csv")
+df = pd.read_csv((Path(__file__).resolve().parents[1] / "data" / "raw" / "creators.csv"))
 
 # - clean columns names
 
@@ -37,7 +38,7 @@ df = df.drop_duplicates()
 print("Missing values: \n",df.isna().sum())
 
 # - save cleaned data
-df.to_csv("ts-sucks/pandas/creatorData_cleaned.csv")
+df.to_csv((Path(__file__).resolve().parents[1] / "data" / "processed" / "creatorData_cleaned.csv"), index=False)
 
 print("Cleaning Completed")
 print(df.head())
