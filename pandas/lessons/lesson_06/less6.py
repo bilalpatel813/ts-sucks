@@ -64,4 +64,20 @@ print(houses[["price","price_group"]])
 
 
 
+houses = pd.DataFrame({
+    "area_sqft": [600, 1200, 2000],
+    "bedrooms": [1, 2, 4],
+    "price": [3_000_000, 8_000_000, 15_000_000]
+})
 
+houses["price_per_sqft"] = (
+    houses["price"] / houses["area_sqft"]
+)
+
+houses["area_per_bedroom"] = (
+    houses["area_sqft"] / houses["bedrooms"]
+)
+
+houses["log_price"] = np.log1p(houses["price"])
+
+print(houses)
