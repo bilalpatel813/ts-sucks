@@ -1,0 +1,50 @@
+[
+    {
+        "event_id": 1,
+        "ip": "192.168.1.10",
+        "event_type": "login",
+        "username": "admin",
+        "status": "failed",
+        "failed_attempts": 8
+    },
+    {
+        "event_id": 2,
+        "ip": "192.168.1.15",
+        "event_type": "login",
+        "username": "bilal",
+        "status": "success",
+        "failed_attempts": 0
+    },
+    {
+        "event_id": 3,
+        "ip": "203.0.113.45",
+        "event_type": "file_access",
+        "username": "guest",
+        "status": "denied",
+        "failed_attempts": 0
+    },
+    {
+        "event_id": 4,
+        "ip": "203.0.113.50",
+        "event_type": "port_scan",
+        "username": "unknown",
+        "status": "detected",
+        "failed_attempts": 0
+    },
+    {
+        "event_id": 5,
+        "ip": "192.168.1.20",
+        "event_type": "login",
+        "username": "root",
+        "status": "failed",
+        "failed_attempts": 12
+    },
+    {
+        "event_id": 6,
+        "ip": "192.168.1.25",
+        "event_type": "file_access",
+        "username": "user1",
+        "status": "success",
+        "failed_attempts": 0
+    }
+]
