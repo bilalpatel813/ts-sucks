@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
 
-INPUT_FILE = Path("/python/security_events.json")
-OUTPUT_FILE = Path("/python/report.json")
+INPUT_FILE = Path("security_events.json")
+OUTPUT_FILE = Path("report.json")
 
 def load_events():
 

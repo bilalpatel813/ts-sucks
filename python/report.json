@@ -1,0 +1,23 @@
+{
+    "total_suspecious_events": 2,
+    "events": [
+        {
+            "event_id": 1,
+            "ip": "192.168.1.10",
+            "username": "admin",
+            "threats": [
+                "possible brute force login attack"
+            ],
+            "risk_level": "Medium"
+        },
+        {
+            "event_id": 5,
+            "ip": "192.168.1.20",
+            "username": "root",
+            "threats": [
+                "possible brute force login attack"
+            ],
+            "risk_level": "Medium"
+        }
+    ]
+}
